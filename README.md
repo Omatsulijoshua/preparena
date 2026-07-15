@@ -122,3 +122,4 @@ npm run test:api          # API tests only
 npm run test:admin        # Admin dashboard tests
 npm run test:shared       # Shared package tests
 ```
+
