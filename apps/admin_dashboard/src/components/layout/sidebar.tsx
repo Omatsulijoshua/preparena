@@ -3,16 +3,20 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { LayoutDashboard, BookOpen, Users, DollarSign, School, Bot, Settings, HelpCircle, GraduationCap } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Users, DollarSign, School, Bot, Settings, GraduationCap, ClipboardList, Ticket, Bell, BookMarked, Book } from 'lucide-react';
 
 const menuItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/users', label: 'Users', icon: Users },
   { href: '/questions', label: 'Questions', icon: BookOpen },
+  { href: '/examinations', label: 'Examinations', icon: ClipboardList },
+  { href: '/subjects', label: 'Subjects & Topics', icon: Book },
   { href: '/schools', label: 'Schools', icon: School },
   { href: '/payments', label: 'Payments', icon: DollarSign },
+  { href: '/coupons', label: 'Coupons & Vouchers', icon: Ticket },
   { href: '/analytics', label: 'Analytics', icon: GraduationCap },
   { href: '/ai', label: 'AI Gateway', icon: Bot },
+  { href: '/notifications', label: 'Notifications', icon: Bell },
   { href: '/settings', label: 'Settings', icon: Settings },
 ];
 

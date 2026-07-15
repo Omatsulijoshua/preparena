@@ -9,13 +9,19 @@ const stats = [
   { title: 'Active Examinations', value: '48', change: '+4', icon: BookOpen, color: 'text-green-400' },
   { title: 'Revenue (NGN)', value: '₦2.4M', change: '+18%', icon: DollarSign, color: 'text-gold-400' },
   { title: 'Readiness Score', value: '74%', change: '+5%', icon: Activity, color: 'text-purple-400' },
+  { title: 'Schools', value: '18', change: '+2', icon: Users, color: 'text-cyan-400', iconName: 'School' },
+  { title: 'Questions', value: '8,450', change: '+340', icon: BookOpen, color: 'text-pink-400', iconName: 'BookOpen' },
+  { title: 'Subscriptions', value: '3,210', change: '+8%', icon: DollarSign, color: 'text-orange-400', iconName: 'Award' },
+  { title: 'AI Requests', value: '24,560', change: '+22%', icon: Activity, color: 'text-indigo-400', iconName: 'Activity' },
 ];
 
 const recentActivities = [
-  { user: 'John Doe', action: 'Completed WAEC Mathematics', time: '5 min ago' },
+  { user: 'John Doe', action: 'Completed WAEC Mathematics - 72%', time: '5 min ago' },
   { user: 'Jane Smith', action: 'Subscribed to Annual plan', time: '12 min ago' },
-  { user: 'School Admin', action: 'Created 50 new questions', time: '1 hour ago' },
-  { user: 'Teacher', action: 'Assigned test to SS3 class', time: '2 hours ago' },
+  { user: 'Lagos Grammar', action: 'School admin created 50 new questions', time: '1 hour ago' },
+  { user: 'Mr. Adebayo', action: 'Assigned Physics test to SS3 class', time: '2 hours ago' },
+  { user: 'Student User', action: 'AI Tutor session - 15 min duration', time: '3 hours ago' },
+  { user: 'Premium Student', action: 'Completed Daily Challenge - 8/10', time: '4 hours ago' },
 ];
 
 export default function DashboardPage() {
@@ -67,9 +73,19 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-3">
-              {['Create Question', 'Add Student', 'Manage Exams', 'View Reports', 'Send Notification', 'Backup Data'].map((action) => (
-                <button key={action} className="p-3 bg-navy-700 rounded-lg text-sm text-navy-200 hover:bg-navy-600 hover:text-white transition-colors text-left">
-                  {action}
+              {[
+                { label: 'Create Question', desc: 'Add new exam question' },
+                { label: 'Import CSV', desc: 'Bulk import questions' },
+                { label: 'Add School', desc: 'Register new school' },
+                { label: 'Create Coupon', desc: 'New discount code' },
+                { label: 'Send Broadcast', desc: 'Notify all students' },
+                { label: 'View Reports', desc: 'Analytics dashboard' },
+                { label: 'Manage Exams', desc: 'Configure examinations' },
+                { label: 'Run Backup', desc: 'Database backup' },
+              ].map((action) => (
+                <button key={action.label} className="p-3 bg-navy-700 rounded-lg text-sm text-left transition-all hover:bg-navy-600 hover:border-gold-500/30 border border-transparent group">
+                  <p className="text-navy-200 group-hover:text-white font-medium">{action.label}</p>
+                  <p className="text-navy-500 text-xs mt-0.5">{action.desc}</p>
                 </button>
               ))}
             </div>
