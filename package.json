@@ -1,0 +1,49 @@
+{
+  "name": "preparena",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run start:dev -w services/api",
+    "dev:admin": "npm run dev -w apps/admin_dashboard",
+    "dev:landing": "npm run dev -w apps/landing_website",
+    "build:shared": "npm run build -w packages/shared",
+    "build:api": "npm run build -w services/api",
+    "build:admin": "npm run build -w apps/admin_dashboard",
+    "build:landing": "npm run build -w apps/landing_website",
+    "test:api": "npm run test -w services/api",
+    "test:admin": "npm run test -w apps/admin_dashboard",
+    "test:shared": "npm run test -w packages/shared",
+    "test": "npm run test:shared && npm run test:api && npm run test:admin",
+    "lint": "npm run lint -w services/api && npm run lint -w apps/admin_dashboard && npm run lint -w apps/landing_website",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,css,md}\"",
+    "db:migrate": "npm run prisma:migrate -w services/api",
+    "db:seed": "npm run prisma:seed -w services/api",
+    "db:studio": "npm run prisma:studio -w services/api",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.4.1",
+    "typescript": "^5.6.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
