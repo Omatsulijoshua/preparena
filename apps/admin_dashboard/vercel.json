@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd ../../ && npm ci && npm run build:shared && cd apps/admin_dashboard && npm run build",
+  "outputDirectory": ".next"
+}
