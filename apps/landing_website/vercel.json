@@ -1,4 +1,5 @@
 {
-  "buildCommand": "cd ../../ && npm ci && npm run build:shared && cd apps/landing_website && npm run build",
+  "installCommand": "cd ../../ && npm ci",
+  "buildCommand": "cd ../../ && npm run build:shared && cd apps/landing_website && npm run build",
   "outputDirectory": ".next"
 }
