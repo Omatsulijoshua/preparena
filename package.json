@@ -27,7 +27,7 @@
     "db:studio": "npm run prisma:studio -w services/api",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "devDependencies": {
     "husky": "^9.1.6",
