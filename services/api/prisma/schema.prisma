@@ -363,7 +363,7 @@ model ExaminationPaper {
   duration          Int
   totalMarks        Float
   instructions      String?
-  sections          Json?
+  sectionsJson       Json?
   isPublished       Boolean  @default(false)
   isActive          Boolean  @default(true)
   createdAt         DateTime @default(now())
@@ -412,7 +412,7 @@ model Attempt {
   userId              String
   examinationPaperId  String?
   mode                ExamMode
-  answers             Json?
+  answersJson          Json?
   score               Float?
   totalMarks          Float?
   timeSpent           Int       @default(0)
