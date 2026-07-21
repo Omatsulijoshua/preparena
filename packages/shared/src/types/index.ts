@@ -1,4 +1,4 @@
-import type { Role, ExaminationBody, QuestionType, DifficultyLevel, ExaminationMode, SubscriptionPlan, PaymentProvider, MistakeCategory, AIfeature, SubscriptionStatus, Currency } from '../constants';
+import type { Role, QuestionType, DifficultyLevel, ExaminationMode, SubscriptionPlan, PaymentProvider, MistakeCategory, AIfeature, SubscriptionStatus, Currency } from '../constants';
 
 export interface User {
   id: string;
@@ -33,17 +33,6 @@ export interface StudentProfile {
   totalStudyTime: number;
   totalQuestionsAttempted: number;
   averageScore: number;
-}
-
-export interface ExaminationBody {
-  id: string;
-  name: string;
-  code: string;
-  description: string | null;
-  logo: string | null;
-  isActive: boolean;
-  createdAt: string;
-  updatedAt: string;
 }
 
 export interface ExaminationType {
