@@ -344,6 +344,7 @@ model Question {
   typeRelation      ExaminationType  @relation(fields: [examinationTypeId], references: [id])
   subject           Subject          @relation(fields: [subjectId], references: [id])
   topic             Topic            @relation(fields: [topicId], references: [id])
+  bookmarks         Bookmark[]
   sectionQuestions  ExamPaperSectionQuestion[]
   attempts          AttemptAnswer[]
 
