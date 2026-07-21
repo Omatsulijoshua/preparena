@@ -13,9 +13,9 @@ const requestLogs = [
 ];
 
 const providerStats = [
-  { name: 'OpenAI', requests: 12450, cost: 124.50, tokens: 6.2M, status: 'healthy', priority: 1 },
-  { name: 'Anthropic', requests: 5620, cost: 84.30, tokens: 3.1M, status: 'healthy', priority: 2 },
-  { name: 'Google AI', requests: 2100, cost: 12.60, tokens: 1.1M, status: 'healthy', priority: 3 },
+  { name: 'OpenAI', requests: 12450, cost: 124.50, tokens: 6200000, status: 'healthy', priority: 1 },
+  { name: 'Anthropic', requests: 5620, cost: 84.30, tokens: 3100000, status: 'healthy', priority: 2 },
+  { name: 'Google AI', requests: 2100, cost: 12.60, tokens: 1100000, status: 'healthy', priority: 3 },
 ];
 
 export default function AiGatewayPage() {
