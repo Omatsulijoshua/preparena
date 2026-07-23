@@ -54,7 +54,7 @@ export class AttemptsService {
       }),
     );
 
-    const validAnswers = processedAnswers.filter(Boolean);
+    const validAnswers = processedAnswers.filter((a): a is NonNullable<typeof a> => a !== null);
 
     await this.prisma.attemptAnswer.createMany({
       data: validAnswers,
@@ -67,7 +67,6 @@ export class AttemptsService {
     return this.prisma.attempt.update({
       where: { id },
       data: {
-        answers: validAnswers,
         score: totalScore,
         totalMarks,
         timeSpent,

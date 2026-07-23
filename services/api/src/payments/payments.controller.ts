@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Headers, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, Headers, Param, UseGuards } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 import { PaymentsService } from './payments.service';
 import { Public } from '../common/decorators/public.decorator';
